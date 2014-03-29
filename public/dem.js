@@ -55,7 +55,7 @@ function setupControls() {
 		if (event.pageX > lastx + xSensitivity || event.pageX < lastx - xSensitivity) {
 			lastx = event.pageX;
 			newHeight = Math.round((maxHeight/window.innerWidth)*(window.innerWidth-event.pageX))-10;
-			console.log(window.innerWidth);
+			console.log(newHeight);
 			setHeight(newHeight);
 			socket.emit('height',newHeight);
 		}
@@ -132,7 +132,7 @@ function setHeight(level) {
 	//vis.clear();
 	ctx.clearRect(0,0,canvas.width, canvas.height);
 
-	console.log('drawing');
+	$('#seaLevel .value').html(height);
 	pixelSize = 10;
 	count = 0;
 	

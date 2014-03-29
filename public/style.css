@@ -1,0 +1,49 @@
+body, html {
+	margin:0;
+	padding:0;
+	background-color:#000;
+	overflow:hidden;
+	font-family:helvetica;
+}
+
+#vis {
+	width: 652px;
+	height: 1190px;
+	border: 1px solid red;
+	position: absolute;
+}
+
+#wrapper {
+	position: absolute;
+	-webkit-transform: rotate(63deg);
+	top: 0px;
+	left: 0px;
+	opacity: 0.5;
+}
+
+#seaLevel {
+	position:absolute;
+	bottom:100px;
+	left:500px;
+
+}
+
+.info {
+	font-size:3em;
+	line-height:1em;
+	position:absolute;
+	color:#fff;
+}
+
+.info .value {
+	font-size:4em;
+}
+.info .units {
+	font-size:2em;
+	color: #fff;
+}
+.info .title {
+	font-size:1em;
+	color: #fff;
+	text-align: center;
+}

@@ -12,8 +12,8 @@ $(document).ready(function(){
 
 	$(function() {
 	    $( "#slider" ).slider({
-	    	min:-5,
-	    	max:100,
+	    	min:0,
+	    	max:15,
 	    	value: 50,
 	    	slide: function(event, ui) {
 	    		console.log(ui.value);

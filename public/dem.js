@@ -13,11 +13,11 @@ var demArr = [];
 
 var lastx = 0;
 var xSensitivity = 15;
-var maxHeight = 200;
+var maxHeight = 25;
 
 
 $(document).ready(function(){
-	setupVis();
+	//setupVis();
 	setupControls();
 	console.log(screen.availWidth);
 	console.log(screen.availHeight)
@@ -54,7 +54,7 @@ function setupControls() {
 	$(document).mousemove(function(event){
 		if (event.pageX > lastx + xSensitivity || event.pageX < lastx - xSensitivity) {
 			lastx = event.pageX;
-			newHeight = Math.round((maxHeight/window.innerWidth)*(window.innerWidth-event.pageX))-10;
+			newHeight = Math.round((maxHeight/window.innerWidth)*(window.innerWidth-event.pageX));
 			console.log(newHeight);
 			setHeight(newHeight);
 			socket.emit('height',newHeight);
@@ -63,7 +63,7 @@ function setupControls() {
 }
 
 
-function setupVis() {
+/*function setupVis() {
 	//create svg
 	//vis = SVG('vis').size('100%', '100%');
 	canvas = document.getElementById('vis');
@@ -109,10 +109,6 @@ function setupVis() {
 			}
 		}
 
-		/*for (i=0; i<18; i++) {
-			demArr.pop();
-			console.log('pop');
-		}*/
 		//demArr.pop();
 		//demArr.reverse();
 
@@ -125,9 +121,15 @@ function setupVis() {
 		//set initial height
 		setHeight(50);
 	});
-}
+}*/
 
 function setHeight(level) {
+	console.log(level);
+	$('#visImg').attr('src','img/test'+level+'.png')
+	$('#seaLevel .value').html(level);
+}
+
+/*function setHeight(level) {
 	height = level;
 	//vis.clear();
 	ctx.clearRect(0,0,canvas.width, canvas.height);
@@ -150,7 +152,7 @@ function setHeight(level) {
 			}
 		}
 	}
-}
+}*/
 
 
 function size(obj) {
